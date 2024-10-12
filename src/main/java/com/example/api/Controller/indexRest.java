@@ -10,25 +10,27 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.api.Model.product;
 import com.example.api.Model.productService;
-
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 @RestController
 public class indexRest {
 	@Autowired
 	private productService producto;
-	
+
 @GetMapping("/produto")
-public product produto(@RequestParam(required = true) String id) {
+public ResponseEntity<String> produto(@RequestParam(name = "id") String id) {
 	int ID = Integer.parseInt(id);
-	
-	return producto.produtoRetornar(ID);
+	Gson gson = new GsonBuilder().setPrettyPrinting().create();
+	var e= producto.produtoRetornar(ID);
+	return new ResponseEntity<>(gson.toJson(e), HttpStatus.ACCEPTED);
 }
 @PostMapping("/Adicionar")
-public ResponseEntity<String> Adicionar(@RequestParam(name = "valor") float valor, @RequestParam(name = "nome") String nome) {
+public ResponseEntity<String> Adicionar(@RequestParam(name = "valor") String valor, @RequestParam(name = "nome") String nome) {
 	product produtu = new product();
-	produtu.setValor(valor);
+	produtu.setValor(Float.parseFloat(valor));
 	produtu.setNome(nome);
 	producto.Adicionar(produtu);
 	return new ResponseEntity<>("Produto adicionado", HttpStatus.CREATED);
-	
+
 }
 }

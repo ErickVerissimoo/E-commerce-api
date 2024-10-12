@@ -1,15 +1,15 @@
 {
 	"folders": {},
 	"connections": {
-		"h2_embedded-1927be5d78b-7448b3992b3abbe5": {
+		"h2_embedded_v2-1927e4c0e9e-42a71b6f609459d6": {
 			"provider": "h2",
-			"driver": "h2_embedded",
+			"driver": "h2_embedded_v2",
 			"name": "apiEcommerce",
 			"save-password": true,
 			"configuration": {
-				"database": "apiEcommerce",
-				"url": "jdbc:h2:apiEcommerce",
-				"configurationType": "MANUAL",
+				"database": "jdbc\\:h2\\:mem\\:apiEcommerce",
+				"url": "jdbc:h2:mem:apiEcommerce",
+				"configurationType": "URL",
 				"type": "dev",
 				"closeIdleConnection": true,
 				"auth-model": "native"
