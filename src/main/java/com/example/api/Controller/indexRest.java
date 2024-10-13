@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.example.api.Model.product;
 import com.example.api.Model.productService;
 import com.google.gson.Gson;
@@ -56,6 +57,7 @@ public ResponseEntity<String> att (@RequestParam(name = "valor") String valor, @
 @ResponseBody
 public ResponseEntity<String> apagar(@RequestParam(name = "id") String id){
 	producto.Apagar(Integer.parseInt(id));
+	
 	return new ResponseEntity<>("Item apagado", HttpStatus.ACCEPTED);
 }
 }
