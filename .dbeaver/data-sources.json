@@ -1,7 +1,7 @@
 {
 	"folders": {},
 	"connections": {
-		"postgres-jdbc-19282b7d980-1a6b5b6a94f16a80": {
+		"postgres-jdbc-19283d21035-22b9eecaf840830a": {
 			"provider": "postgresql",
 			"driver": "postgres-jdbc",
 			"name": "postgres",

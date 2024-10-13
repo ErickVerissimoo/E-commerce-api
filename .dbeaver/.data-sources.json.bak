@@ -1,17 +1,24 @@
 {
 	"folders": {},
 	"connections": {
-		"h2_embedded_v2-1927e4c0e9e-42a71b6f609459d6": {
-			"provider": "h2",
-			"driver": "h2_embedded_v2",
-			"name": "apiEcommerce",
+		"postgres-jdbc-19282b7d980-1a6b5b6a94f16a80": {
+			"provider": "postgresql",
+			"driver": "postgres-jdbc",
+			"name": "postgres",
 			"save-password": true,
 			"configuration": {
-				"database": "jdbc\\:h2\\:mem\\:apiEcommerce",
-				"url": "jdbc:h2:mem:apiEcommerce",
-				"configurationType": "URL",
+				"host": "localhost",
+				"port": "5432",
+				"database": "postgres",
+				"url": "jdbc:postgresql://localhost:5432/postgres",
+				"configurationType": "MANUAL",
+				"home": "/usr/lib/postgresql/16",
 				"type": "dev",
 				"closeIdleConnection": true,
+				"provider-properties": {
+					"@dbeaver-show-non-default-db@": "false",
+					"@dbeaver-chosen-role@": ""
+				},
 				"auth-model": "native"
 			}
 		}
